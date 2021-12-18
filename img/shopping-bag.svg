@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <g id="shopping_bag_black_24dp" transform="translate(0 0.433)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="21" height="21" transform="translate(0 -0.433)" fill="none"/>
+    <path id="Path_3" data-name="Path 3" d="M15.842,5.383H14.15a3.383,3.383,0,1,0-6.767,0H5.692A1.7,1.7,0,0,0,4,7.075v10.15a1.7,1.7,0,0,0,1.692,1.692h10.15a1.7,1.7,0,0,0,1.692-1.692V7.075A1.7,1.7,0,0,0,15.842,5.383ZM10.767,3.692a1.7,1.7,0,0,1,1.692,1.692H9.075A1.7,1.7,0,0,1,10.767,3.692Zm5.075,13.534H5.692V7.075H7.383V8.767a.846.846,0,0,0,1.692,0V7.075h3.383V8.767a.846.846,0,0,0,1.692,0V7.075h1.692Z" transform="translate(-0.617 -0.042)" fill="#fff"/>
+  </g>
+</svg>
