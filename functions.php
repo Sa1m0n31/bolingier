@@ -99,7 +99,7 @@ function bolingier_header() {
             <b>RABAT 15%</b> tylko do 30.11.2021! Użyj kodu <b>EROTIC10</b>.
         </h5>
     </aside>
-    <div class="content">
+    <div class="contentBolingier">
     <nav class="topNav flex">
         <nav class="topNav__languages">
 
@@ -110,14 +110,14 @@ function bolingier_header() {
         </a>
 
         <section class="topNav__right flex">
-            <button class="topBar__right__btn flex">
+            <a class="topBar__right__btn flex" href="">
                 <img class="topBar__right__btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/search.svg'; ?>" alt="szukaj" />
                 Wyszukiwarka
-            </button>
-            <button class="topBar__right__btn flex">
+            </a>
+            <a class="topBar__right__btn flex" href="<?php echo wc_get_cart_url(); ?>">
                 <img class="topBar__right__btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="koszyk" />
-                Koszyk (0 PLN)
-            </button>
+                Koszyk (<?php echo WC()->cart->get_cart_contents_count(); ?>)
+            </a>
         </section>
     </nav>
     <menu class="topMenu">
@@ -434,6 +434,8 @@ function bolingier_homepage() {
         </main>
     </section>
     </div>
+    </div>
+    </div>
     <section class="homepage__fullWidth flex">
         <article class="homepage__fullWidth__left">
             <h3 class="homepage__fullWidth__left__header">
@@ -452,7 +454,7 @@ function bolingier_homepage() {
         </figure>
     </section>
 
-    <div class="content">
+    <div class="contentBolingier">
         <section class="homepage__products">
             <header class="homepage__products__header">
                 <h2 class="homepage__products__header__h flex">
@@ -503,7 +505,7 @@ function bolingier_homepage() {
                 </section>
                 <section class="points__item flex">
                     <figure class="points__item__imgWrapper flex">
-                        <img class="points__item__img" src=".<?php echo get_bloginfo('stylesheet_directory') . '/img/diamond.svg'; ?>" alt="prezent" />
+                        <img class="points__item__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/diamond.svg'; ?>" alt="prezent" />
                     </figure>
                     <h4 class="points__item__header">
                         Modne komplety

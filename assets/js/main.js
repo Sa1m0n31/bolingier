@@ -1,7 +1,7 @@
 const showSubmenu = () => {
     const submenu = document.querySelector('.topMenu__submenu');
 
-    submenu.style.zIndex = '3';
+    submenu.style.zIndex = '9999';
     submenu.style.opacity = '1';
 }
 

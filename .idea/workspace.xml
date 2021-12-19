@@ -1,160 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab20b0b1-05f1-4466-a9d0-d507c29f1255" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/admin-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/buttons-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/buttons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/customizer/customizer-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/customizer/customizer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/customizer/customizer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/plugin-install-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/plugin-install.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/welcome-screen/welcome-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/welcome-screen/welcome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/admin/welcome-screen/welcome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/base/gutenberg-blocks-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/base/gutenberg-blocks.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/base/gutenberg-editor-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/base/gutenberg-editor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/base/icons-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/base/icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/jetpack/infinite-scroll-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/jetpack/infinite-scroll.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/jetpack/widgets-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/jetpack/widgets.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/advanced-product-labels-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/advanced-product-labels.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/advanced-product-labels.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/ajax-layered-nav-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/ajax-layered-nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/ajax-layered-nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/bookings-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/bookings.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/bookings.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/brands-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/brands.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/brands.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/bundles-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/bundles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/bundles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/composite-products-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/composite-products.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/composite-products.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/deposits-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/deposits.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/deposits.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/memberships-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/memberships.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/memberships.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/mix-and-match-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/mix-and-match.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/mix-and-match.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/photography-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/photography.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/photography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/product-recommendations-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/product-recommendations.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/product-recommendations.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/product-reviews-pro-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/product-reviews-pro.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/product-reviews-pro.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/quick-view-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/quick-view.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/quick-view.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/ship-multiple-addresses-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/ship-multiple-addresses.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/ship-multiple-addresses.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/smart-coupons-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/smart-coupons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/smart-coupons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/variation-swatches-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/variation-swatches.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/variation-swatches.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/wishlists-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/wishlists.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/extensions/wishlists.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/woocommerce-rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/woocommerce/woocommerce.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/admin/storefront-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/admin/welcome-screen/automattic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/admin/welcome-screen/child-themes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/admin/welcome-screen/storefront-bundle-hero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/amex.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/diners.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/discover.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/jcb.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/laser.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/maestro.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/mastercard.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/paypal.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/unknown.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/credit-cards/visa.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/controls/2cl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/controls/2cr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/categories/accessories.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/categories/hoodies.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/categories/tshirts.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/hero.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/beanie.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/belt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/cap.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/hoodie-with-logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/hoodie-with-pocket.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/hoodie-with-zipper.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/hoodie.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/long-sleeve-tee.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/polo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/sunglasses.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/tshirt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer/starter-content/products/vneck-tee.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/admin/admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/admin/admin.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/admin/customizer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/admin/customizer.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/admin/plugin-install.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/admin/plugin-install.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/footer.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/homepage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/homepage.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/navigation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/navigation.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/sticky-add-to-cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/sticky-add-to-cart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/woocommerce/extensions/brands.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/woocommerce/extensions/brands.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/woocommerce/header-cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/woocommerce/header-cart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="ab20b0b1-05f1-4466-a9d0-d507c29f1255" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings">
-    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -165,9 +16,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="ProjectId" id="22SLVw08zBdGr0ztqduxSbAUKHa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -176,20 +24,18 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jurkiewicz/functions.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier" />
-      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\assets\js" />
-      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\html" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier" />
+      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\img" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -200,23 +46,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639826069548</updated>
-      <workItem from="1639826070730" duration="12259000" />
-      <workItem from="1639844078302" duration="1684000" />
+      <workItem from="1639826070730" duration="12853000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="WindowStateProjectService">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1639844023173">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639844023173" />
   </component>
 </project>
