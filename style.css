@@ -40,6 +40,7 @@ Images License: GNU General Public License v2 or later
     color: #fff;
 }
 
+.payment_box,
 .d-none,
 .woocommerce-form-coupon-toggle,
 button[name=update_cart],
@@ -71,6 +72,10 @@ body,
 .container {
     background: var(--dark);
     overflow-x: hidden;
+}
+
+.d-mobile {
+    display: none;
 }
 
 .contentBolingier {
@@ -265,9 +270,10 @@ a {
 }
 
 .topMenu__submenu__section__header {
-    color: var(--green);
+    color: var(--green) !important;
     margin-bottom: 25px;
     font-size: 26px;
+    font-weight: 700;
 }
 
 .topMenu__submenu__section__main {
@@ -582,6 +588,7 @@ a {
 }
 
 .entry-title {
+    margin-bottom: 30px !important;
     color: #fff;
 }
 
@@ -792,4 +799,95 @@ table.cart td.product-remove, table.cart td.actions {
 
 .woocommerce-checkout .place-order .button {
     border: 1px solid #fff !important;
+}
+
+table.cart td.actions input {
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.wc_payment_method  {
+    background-color: transparent !important;
+}
+
+#payment {
+    border-top: 40px solid var(--dark);
+}
+
+#payment::before {
+    content: "Wybierz metodę płatności" !important;
+    margin: auto;
+    padding: 25px 0 15px;
+    font-weight: 700;
+}
+
+#payment .wc_payment_methods {
+    margin: 20px 0 !important;
+    padding: 20px 0 !important;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+#payment .place-order {
+    margin-top: 10px !important;
+}
+
+.woocommerce-checkout .shop_table tbody {
+    border-top: 1px solid #efefef !important;
+    border-bottom: 1px solid #efefef !important;
+}
+
+.woocommerce-checkout .shop_table * {
+    font-size: 14px !important;
+}
+
+.woocommerce-checkout thead,
+.woocommerce-checkout .cart_item {
+    border: none !important;
+}
+
+.woocommerce-order-received ul.order_details {
+    background-color: transparent !important;
+}
+
+.woocommerce-order-received ul.order_details::after,
+.woocommerce-order-received ul.order_details::before {
+    display: none !important;
+}
+
+.woocommerce-order-received .order_details,
+.woocommerce-order-received .order_details * {
+    background-color: transparent !important;
+}
+
+.woocommerce-order-details h2,
+.woocommerce-customer-details h2 {
+    color: #fff !important;
+}
+
+.woocommerce-order-details .shop_table {
+    margin-top: 10px;
+}
+
+.woocommerce-order p:last-of-type {
+    display: none !important;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.return-to-shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.woocommerce-info {
+    background-color: var(--green) !important;
+    text-align: left;
+}
+
+.woocommerce-error {
+    background-color: #e2401c !important;
 }

@@ -11,3 +11,23 @@ const hideSubmenu = () => {
     submenu.style.zIndex = '-1';
     submenu.style.opacity = '0';
 }
+
+const openMobileMenu = () => {
+    const mobileMenu = document.querySelector('.menuMobile');
+    const mobileMenuInner = document.querySelector(".menuMobile__inner");
+
+    mobileMenu.style.transform = "scaleX(1)";
+    setTimeout(() => {
+        mobileMenuInner.style.opacity = '1';
+    }, 300);
+}
+
+const closeMobileMenu = () => {
+    const mobileMenu = document.querySelector('.menuMobile');
+    const mobileMenuInner = document.querySelector(".menuMobile__inner");
+
+    mobileMenuInner.style.opacity = '0';
+    setTimeout(() => {
+        mobileMenu.style.transform = "scaleX(0)";
+    }, 300);
+}

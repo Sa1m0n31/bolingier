@@ -105,11 +105,11 @@ function bolingier_header() {
 
         </nav>
 
-        <a class="topNav__logoWrapper">
+        <a class="topNav__logoWrapper" href="<?php echo get_home_url(); ?>">
             <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/logo.png'; ?>" alt="bolingier" />
         </a>
 
-        <section class="topNav__right flex">
+        <section class="topNav__right flex d-desktop">
             <a class="topBar__right__btn flex" href="">
                 <img class="topBar__right__btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/search.svg'; ?>" alt="szukaj" />
                 Wyszukiwarka
@@ -120,21 +120,152 @@ function bolingier_header() {
             </a>
         </section>
     </nav>
-    <menu class="topMenu">
+    <menu class="topMenu--mobile d-mobile">
+        <button class="topMenu--mobile__item" onclick="openMobileMenu()">
+            <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/menu.svg'; ?>" alt="menu" />
+        </button>
+        <a class="topMenu--mobile__item" href="/koszyk">
+            <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="menu" />
+        </a>
+        <a class="topMenu--mobile__item" href="/sklep">
+            <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/search.svg'; ?>" alt="menu" />
+        </a>
+    </menu>
+    <nav class="menuMobile d-mobile">
+        <main class="menuMobile__inner">
+            <header class="menuMobile__header">
+                <h4 class="menuMobile__header__h">
+                    Kategorie
+                </h4>
+            </header>
+            <button class="menuMobile__closeBtn" onclick="closeMobileMenu()">
+                <img class="icon__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/long-arrow.svg'; ?>" alt="zamknij-menu" />
+                Wróć
+            </button>
+            <section class="topMenu__submenu__section">
+                <h3 class="topMenu__submenu__section__header">
+                    Dla niej
+                </h3>
+                <main class="topMenu__submenu__section__main flex">
+                    <section class="topMenu__submenu__category">
+                        <a class="topMenu__submenu__category__link" href="">
+                            Hard
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Kombinezony
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Body
+                        </a>
+                    </section>
+                    <section class="topMenu__submenu__category">
+                        <a class="topMenu__submenu__category__link" href="">
+                            Hard
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Kombinezony
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Body
+                        </a>
+                    </section>
+                    <section class="topMenu__submenu__category">
+                        <a class="topMenu__submenu__category__link" href="">
+                            Hard
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Kombinezony
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Body
+                        </a>
+                    </section>
+                    <section class="topMenu__submenu__category">
+                        <a class="topMenu__submenu__category__link" href="">
+                            Hard
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Kombinezony
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Body
+                        </a>
+                    </section>
+                </main>
+            </section>
+            <section class="topMenu__submenu__section">
+                <h3 class="topMenu__submenu__section__header">
+                    Dla niego
+                </h3>
+                <main class="topMenu__submenu__section__main flex">
+                    <section class="topMenu__submenu__category">
+                        <a class="topMenu__submenu__category__link" href="">
+                            Hard
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Kombinezony
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Body
+                        </a>
+                    </section>
+                    <section class="topMenu__submenu__category">
+                        <a class="topMenu__submenu__category__link" href="">
+                            Hard
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Kombinezony
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Body
+                        </a>
+                    </section>
+                    <section class="topMenu__submenu__category">
+                        <a class="topMenu__submenu__category__link" href="">
+                            Hard
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Kombinezony
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Body
+                        </a>
+                    </section>
+                    <section class="topMenu__submenu__category">
+                        <a class="topMenu__submenu__category__link" href="">
+                            Hard
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Kombinezony
+                        </a>
+                        <a class="topMenu__submenu__subcategory__link" href="">
+                            Body
+                        </a>
+                    </section>
+                </main>
+            </section>
+        </main>
+    </nav>
+
+
+
+
+
+    <menu class="topMenu d-desktop">
         <ul class="topMenu__list flex">
             <li class="topMenu__list__item">
-                <a class="topMenu__list__item__link" href="/">
+                <a class="topMenu__list__item__link" href="<?php echo get_home_url(); ?>">
                     Strona główna
                 </a>
             </li>
             <li class="topMenu__list__item">
-                <a class="topMenu__list__item__link" href="/">
+                <a class="topMenu__list__item__link" href="<?php echo get_page_link(get_page_by_title('O nas')->ID); ?>">
                     O nas
                 </a>
             </li>
             <li class="topMenu__list__item topMenu__list__item--shop" onmouseenter="showSubmenu()" onmouseleave="hideSubmenu()">
                 <a class="topMenu__list__item__link flex"
-                   href="/">
+                   href="/sklep">
                     Sklep <img class="topMenu__list__item__link__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-down.svg'; ?>" alt="rozwin" />
                 </a>
                 <menu class="topMenu__submenu flex">
@@ -246,12 +377,12 @@ function bolingier_header() {
                 </menu>
             </li>
             <li class="topMenu__list__item">
-                <a class="topMenu__list__item__link" href="/">
+                <a class="topMenu__list__item__link" href="<?php echo get_page_link(get_page_by_title('Informacje')->ID); ?>">
                     Informacje
                 </a>
             </li>
             <li class="topMenu__list__item">
-                <a class="topMenu__list__item__link" href="/">
+                <a class="topMenu__list__item__link" href="<?php echo get_page_link(get_page_by_title('Kontakt')->ID); ?>">
                     Kontakt
                 </a>
             </li>
