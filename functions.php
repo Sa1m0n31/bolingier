@@ -801,3 +801,37 @@ function bolingier_footer() {
 }
 
 add_action('storefront_footer', 'bolingier_footer', 14);
+
+function bolingier_before_add_to_cart_form() {
+    ?>
+        <h4 class="singleProduct__description__header">
+            Opis produktu
+        </h4>
+    <p class="singleProduct__description__main">
+        <?php
+            global $product;
+            echo $product->get_description();
+        ?>
+    </p>
+<?php
+}
+
+add_action('woocommerce_before_add_to_cart_form', 'bolingier_before_add_to_cart_form');
+
+
+function bolingier_single_variation() {
+    ?>
+    <span class="singleProduct__links">
+        Nie wiesz jaki rozmiar wybrać? <a class="link" href="<?php echo get_page_link(get_page_by_title('Tabela rozmiarów')->ID);  ?>">
+            Sprawdź tabelę rozmiarów
+        </a>
+    </span>
+    <span class="singleProduct__links">
+        <a class="link">
+            Informacje o przesyłkach (wysyłamy również za granicę)
+        </a>
+    </span>
+<?php
+}
+
+add_action('woocommerce_single_variation', 'bolingier_single_variation');

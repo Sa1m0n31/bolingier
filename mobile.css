@@ -184,6 +184,10 @@
     .woocommerce-checkout h3 {
         font-size: 21px !important;
     }
+
+    .single-product .price * {
+        font-size: 24px;
+    }
 }
 
 @media(max-width: 768px) {
@@ -391,6 +395,47 @@
     .woocommerce-order-received address {
         text-align: center;
         margin-top: 20px;
+    }
+
+    .single-product .product_title {
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .single-product .price {
+        text-align: center !important;
+        margin-top: -10px !important;
+        width: 100% !important;
+    }
+
+    .single-product .entry-summary * {
+        order: 4;
+    }
+
+    .single-product .product_title {
+        order: 1;
+    }
+
+    .single-product .price {
+        order: 3;
+    }
+
+    .single-product .woocommerce-product-details__short-description {
+        text-align: center;
+        border: none;
+        order: 2;
+    }
+
+    .singleProduct__links {
+        font-size: 12px;
+    }
+
+    .single-product .price * {
+        font-size: 32px !important;
+    }
+
+    .singleProduct__description__header {
+        margin-bottom: 5px;
     }
 }
 
