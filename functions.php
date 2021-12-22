@@ -101,8 +101,21 @@ function bolingier_header() {
     </aside>
     <div class="contentBolingier">
     <nav class="topNav flex">
-        <nav class="topNav__languages">
-
+        <nav class="topNav__languages flex">
+            <span>
+                Wybierz język
+            </span>
+            <div>
+                <a class="topNav__languages__name flex" href="https://bolingier.skylo-test1.pl/test123">
+                    <img class="topNav__languages__flag" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/poland.svg'; ?>" alt="polski" />
+                    Polski
+                    <img class="topNav__languages__arrow" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-down.svg'; ?>"
+                </a>
+                <a class="topNav__languages__name flex topNav__languages__name--second" href="https://bolingier.skylo-test1.pl/en">
+                    <img class="topNav__languages__flag" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/united-states.svg'; ?>" alt="polski" />
+                    English
+                </a>
+            </div>
         </nav>
 
         <a class="topNav__logoWrapper" href="<?php echo get_home_url(); ?>">
@@ -408,78 +421,53 @@ function bolingier_homepage() {
             </h2>
         </header>
         <main class="homepage__products__main flex">
-            <section class="homepage__product">
-                <figure class="homepage__product__imgWrapper">
-                    <img class="homepage__product__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="tytul" />
-                </figure>
-                <h3 class="homepage__product__title">
-                    Tytuł produktu
-                </h3>
-                <h4 class="homepage__product__subtitle">
-                    Podtytuł produktu (max. 40 znaków)
-                </h4>
-                <h5 class="homepage__product__price">
-                    199 PLN
-                </h5>
-                <button class="homepage__product__addToCart flex">
-                    <img class="homepage__product__addToCart__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="dodaj-do-koszyka" />
-                    Dodaj do koszyka
-                </button>
-            </section>
-            <section class="homepage__product">
-                <figure class="homepage__product__imgWrapper">
-                    <img class="homepage__product__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="tytul" />
-                </figure>
-                <h3 class="homepage__product__title">
-                    Tytuł produktu
-                </h3>
-                <h4 class="homepage__product__subtitle">
-                    Podtytuł produktu (max. 40 znaków)
-                </h4>
-                <h5 class="homepage__product__price">
-                    199 PLN
-                </h5>
-                <button class="homepage__product__addToCart flex">
-                    <img class="homepage__product__addToCart__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="dodaj-do-koszyka" />
-                    Dodaj do koszyka
-                </button>
-            </section>
-            <section class="homepage__product">
-                <figure class="homepage__product__imgWrapper">
-                    <img class="homepage__product__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="tytul" />
-                </figure>
-                <h3 class="homepage__product__title">
-                    Tytuł produktu
-                </h3>
-                <h4 class="homepage__product__subtitle">
-                    Podtytuł produktu (max. 40 znaków)
-                </h4>
-                <h5 class="homepage__product__price">
-                    199 PLN
-                </h5>
-                <button class="homepage__product__addToCart flex">
-                    <img class="homepage__product__addToCart__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="dodaj-do-koszyka" />
-                    Dodaj do koszyka
-                </button>
-            </section>
-            <section class="homepage__product">
-                <figure class="homepage__product__imgWrapper">
-                    <img class="homepage__product__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="tytul" />
-                </figure>
-                <h3 class="homepage__product__title">
-                    Tytuł produktu
-                </h3>
-                <h4 class="homepage__product__subtitle">
-                    Podtytuł produktu (max. 40 znaków)
-                </h4>
-                <h5 class="homepage__product__price">
-                    199 PLN
-                </h5>
-                <button class="homepage__product__addToCart flex">
-                    <img class="homepage__product__addToCart__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="dodaj-do-koszyka" />
-                    Dodaj do koszyka
-                </button>
-            </section>
+            <?php
+            $loop = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'per_page' => 4,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'slug',
+                        'terms' => 'polecane'
+                    )
+                )
+            ));
+            if($loop->have_posts()) {
+                while($loop->have_posts()) {
+                    $loop->the_post();
+                    global $product;
+                    ?>
+                    <section class="homepage__productWrapper">
+                        <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
+                            <figure class="homepage__product__imgWrapper">
+                                <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
+                                <?php
+                                if(get_field('drugie_zdjecie')) {
+                                    ?>
+                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
+                                    <?php
+                                }
+                                ?>
+                            </figure>
+                            <h3 class="homepage__product__title">
+                                <?php echo the_title(); ?>
+                            </h3>
+                            <section class="homepage__product__subtitle">
+                                <?php echo $product->get_short_description(); ?>
+                            </section>
+                            <h4 class="homepage__product__price">
+                                <?php echo $product->get_price_html(); ?>
+                            </h4>
+                        </a>
+                        <?php woocommerce_template_loop_add_to_cart($loop->post, $product); ?>
+                    </section>
+                    <?php
+                }
+                wp_reset_postdata();
+            }
+            ?>
         </main>
     </section>
 
@@ -490,78 +478,56 @@ function bolingier_homepage() {
             </h2>
         </header>
         <main class="homepage__products__main flex">
-            <section class="homepage__product">
-                <figure class="homepage__product__imgWrapper">
-                    <img class="homepage__product__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="tytul" />
-                </figure>
-                <h3 class="homepage__product__title">
-                    Tytuł produktu
-                </h3>
-                <h4 class="homepage__product__subtitle">
-                    Podtytuł produktu (max. 40 znaków)
-                </h4>
-                <h5 class="homepage__product__price">
-                    199 PLN
-                </h5>
-                <button class="homepage__product__addToCart flex">
-                    <img class="homepage__product__addToCart__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="dodaj-do-koszyka" />
-                    Dodaj do koszyka
-                </button>
-            </section>
-            <section class="homepage__product">
-                <figure class="homepage__product__imgWrapper">
-                    <img class="homepage__product__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="tytul" />
-                </figure>
-                <h3 class="homepage__product__title">
-                    Tytuł produktu
-                </h3>
-                <h4 class="homepage__product__subtitle">
-                    Podtytuł produktu (max. 40 znaków)
-                </h4>
-                <h5 class="homepage__product__price">
-                    199 PLN
-                </h5>
-                <button class="homepage__product__addToCart flex">
-                    <img class="homepage__product__addToCart__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="dodaj-do-koszyka" />
-                    Dodaj do koszyka
-                </button>
-            </section>
-            <section class="homepage__product">
-                <figure class="homepage__product__imgWrapper">
-                    <img class="homepage__product__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="tytul" />
-                </figure>
-                <h3 class="homepage__product__title">
-                    Tytuł produktu
-                </h3>
-                <h4 class="homepage__product__subtitle">
-                    Podtytuł produktu (max. 40 znaków)
-                </h4>
-                <h5 class="homepage__product__price">
-                    199 PLN
-                </h5>
-                <button class="homepage__product__addToCart flex">
-                    <img class="homepage__product__addToCart__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="dodaj-do-koszyka" />
-                    Dodaj do koszyka
-                </button>
-            </section>
-            <section class="homepage__product">
-                <figure class="homepage__product__imgWrapper">
-                    <img class="homepage__product__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="tytul" />
-                </figure>
-                <h3 class="homepage__product__title">
-                    Tytuł produktu
-                </h3>
-                <h4 class="homepage__product__subtitle">
-                    Podtytuł produktu (max. 40 znaków)
-                </h4>
-                <h5 class="homepage__product__price">
-                    199 PLN
-                </h5>
-                <button class="homepage__product__addToCart flex">
-                    <img class="homepage__product__addToCart__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="dodaj-do-koszyka" />
-                    Dodaj do koszyka
-                </button>
-            </section>
+            <?php
+            $loop = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'per_page' => 4,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'slug',
+                        'terms' => 'promocje'
+                    )
+                )
+            ));
+            if($loop->have_posts()) {
+                while($loop->have_posts()) {
+                    $loop->the_post();
+                    global $product;
+                    ?>
+                    <section class="homepage__productWrapper">
+                        <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
+                            <figure class="homepage__product__imgWrapper">
+                                <span class="homepage__product__imgWrapper__onsale">
+                                    Promocja!
+                                </span>
+                                <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
+                                <?php
+                                if(get_field('drugie_zdjecie')) {
+                                    ?>
+                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
+                                    <?php
+                                }
+                                ?>
+                            </figure>
+                            <h3 class="homepage__product__title">
+                                <?php echo the_title(); ?>
+                            </h3>
+                            <section class="homepage__product__subtitle">
+                                <?php echo $product->get_short_description(); ?>
+                            </section>
+                            <h4 class="homepage__product__price">
+                                <?php echo $product->get_price_html(); ?>
+                            </h4>
+                        </a>
+                        <?php woocommerce_template_loop_add_to_cart($loop->post, $product); ?>
+                    </section>
+                    <?php
+                }
+                wp_reset_postdata();
+            }
+            ?>
         </main>
     </section>
     </div>
@@ -575,7 +541,7 @@ function bolingier_homepage() {
             <p class="homepage__fullWidth__left__text">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
             </p>
-            <a class="homepage__fullWidth__left__btn flex" href="/">
+            <a class="homepage__fullWidth__left__btn flex" href="<?php echo get_permalink(wc_get_page_id( 'shop' )); ?>">
                 Zobacz wszystkie produkty
                 <img class="homepage__fullWidth__left__btn__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/long-arrow.svg'; ?>" alt="produkty" />
             </a>
@@ -677,23 +643,23 @@ function bolingier_footer() {
                     </h5>
                     <ul class="footer__list">
                         <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
+                            <a class="footer__list__item__link" href="<?php echo get_page_link(get_page_by_title('Regulamin')->ID); ?>">
                                 Regulamin sklepu
                             </a>
                         </li>
                         <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
+                            <a class="footer__list__item__link" href="<?php echo get_page_link(get_page_by_title('Polityka prywatności')->ID); ?>">
                                 Polityka prywatności
                             </a>
                         </li>
                         <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Zwroty
+                            <a class="footer__list__item__link" href="<?php echo get_page_link(get_page_by_title('Tabela rozmiarów')->ID); ?>">
+                                Tabela rozmiarów
                             </a>
                         </li>
                         <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Dostawa i płatność
+                            <a class="footer__list__item__link" href="<?php echo get_page_link(get_page_by_title('Wysyłka')->ID); ?>">
+                                Wysyłka
                             </a>
                         </li>
                     </ul>
@@ -704,12 +670,12 @@ function bolingier_footer() {
                     </h5>
                     <ul class="footer__list">
                         <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
+                            <a class="footer__list__item__link" href="<?php echo get_page_link(get_page_by_title('Informacje')->ID); ?>">
                                 Informacje o sklepie
                             </a>
                         </li>
                         <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
+                            <a class="footer__list__item__link" href="<?php echo get_page_link(get_page_by_title('Kontakt')->ID); ?>">
                                 Kontakt
                             </a>
                         </li>
@@ -827,7 +793,7 @@ function bolingier_single_variation() {
         </a>
     </span>
     <span class="singleProduct__links">
-        <a class="link">
+        <a class="link" href="<?php echo get_page_link(get_page_by_title('Wysyłka')->ID); ?>">
             Informacje o przesyłkach (wysyłamy również za granicę)
         </a>
     </span>
@@ -835,3 +801,62 @@ function bolingier_single_variation() {
 }
 
 add_action('woocommerce_single_variation', 'bolingier_single_variation');
+
+function bolingier_after_single_product() {
+    ?>
+
+    <section class="points">
+        <h3 class="points__header">
+            Jesteśmy wyjątkowi, poznaj nasze zalety
+        </h3>
+        <main class="points__main flex">
+            <section class="points__item flex">
+                <figure class="points__item__imgWrapper flex">
+                    <img class="points__item__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/gift.svg'; ?>" alt="prezent" />
+                </figure>
+                <h4 class="points__item__header">
+                    Dyskretna wysyłka
+                </h4>
+                <p class="points__item__text">
+                    Gwarantujemy maksymalną dyskrecję przy wysyłanych przez nas paczkach.
+                </p>
+            </section>
+            <section class="points__item flex">
+                <figure class="points__item__imgWrapper flex">
+                    <img class="points__item__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/satisfied.svg'; ?>" alt="prezent" />
+                </figure>
+                <h4 class="points__item__header">
+                    Satysfakcja
+                </h4>
+                <p class="points__item__text">
+                    Oferujemy produkty wysokiej jakości, które są gwarancją pełnej satysfakcji.
+                </p>
+            </section>
+            <section class="points__item flex">
+                <figure class="points__item__imgWrapper flex">
+                    <img class="points__item__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/diamond.svg'; ?>" alt="prezent" />
+                </figure>
+                <h4 class="points__item__header">
+                    Modne komplety
+                </h4>
+                <p class="points__item__text">
+                    Nasze kreacje i komplety dostosowujemy do aktualnej mody.
+                </p>
+            </section>
+            <section class="points__item flex">
+                <figure class="points__item__imgWrapper flex">
+                    <img class="points__item__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/decision-making.svg'; ?>" alt="prezent" />
+                </figure>
+                <h4 class="points__item__header">
+                    Doradztwo
+                </h4>
+                <p class="points__item__text">
+                    Jeśli masz problem z wyborem, jesteśmy do Twojej dyspozycji. Chętnie doradzamy!
+                </p>
+            </section>
+        </main>
+    </section>
+<?php
+}
+
+add_action('woocommerce_after_single_product', 'bolingier_after_single_product');

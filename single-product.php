@@ -1,7 +1,9 @@
 <?php
 get_header();
 ?>
-
+<div class="breadcrumb">
+    <?php woocommerce_breadcrumb(); ?>
+</div>
 <main class="singleProduct flex">
     <?php
     global $product;

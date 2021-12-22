@@ -31,3 +31,9 @@ const closeMobileMenu = () => {
         mobileMenu.style.transform = "scaleX(0)";
     }, 300);
 }
+
+const openMobileMenuOnMobile = () => {
+    if(window.innerWidth < 768) {
+        openMobileMenu();
+    }
+}
