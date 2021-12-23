@@ -205,6 +205,11 @@
     .shop__categories {
         width: 30%;
     }
+
+    .topNav__languages span {
+        font-size: 12px;
+        padding-right: 10px;
+    }
 }
 
 @media(max-width: 768px) {
@@ -395,6 +400,23 @@
         padding-top: 30px;
     }
 
+    .home .site-content {
+        padding-top: 0;
+    }
+
+    .home .homepage__products:first-of-type {
+        margin-top: 20px;
+    }
+
+    .home .homepage__bottomContent h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .home .homepage__bottomContent p {
+        font-size: 14px;
+        text-align: center;
+    }
 
     .woocommerce-info,
     .woocommerce-order-received #content * {
@@ -505,6 +527,85 @@
     .homepage__products__main .homepage__productWrapper {
         width: 100% !important;
     }
+
+    .topNav__languages--mobile {
+        width: 30px;
+        padding: 0 !important;
+        background-color: transparent !important;
+        border: none !important;
+        outline: none !important;
+    }
+
+    .topNav__languages--mobile:first-of-type {
+        margin-right: 25px;
+    }
+
+    .menuMobile__inner .topNav__languages {
+        align-items: center;
+    }
+
+    .footer__main {
+        padding-bottom: 0;
+    }
+
+    .footer__header {
+        font-size: 15px;
+    }
+
+    .footer__col {
+        margin-bottom: 0 !important;
+    }
+
+    .footer__list__item__link,
+    .footer__text {
+        font-size: 12px !important;
+    }
+
+    .footer__bottom__header {
+        font-size: 10px;
+    }
+
+    .page-template-default .entry-header h1 {
+        width: 100% !important;
+    }
+
+    .page-template-default h2 {
+        font-size: 24px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .contentBolingier {
+        max-width: 90vw;
+    }
+
+    .slick-slider:last-of-type .slick-track {
+        height: 80px !important;
+    }
+
+    .singleProduct__description__header {
+        margin: 15px auto 8px;
+    }
+
+    .variations tbody tr td:first-of-type,
+    .singleProduct__links,
+    .singleProduct__description__header,
+    .singleProduct__description__main {
+        text-align: center;
+    }
+
+    .variations tbody tr td:first-of-type {
+        margin-bottom: 10px !important;
+        font-size: 12px !important;
+    }
+
+    .woo-variation-swatches .variable-items-wrapper {
+        justify-content: center;
+    }
+
+    .woo-variation-swatches .variable-items-wrapper > li {
+        margin: 0 10px !important;
+    }
+
 }
 
 @media(max-width: 576px) {

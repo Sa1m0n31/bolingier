@@ -73,7 +73,8 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
 function bolingier_scripts() {
     wp_enqueue_style( 'css-mobile', get_template_directory_uri() . '/mobile.css', array(), _S_VERSION );
 
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array('aos-js'), _S_VERSION, true );
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array('aos-js', 'siema-js'), _S_VERSION, true );
+    wp_enqueue_script( 'siema-js', get_template_directory_uri() . '/assets/js/siema.js', array('aos-js'), _S_VERSION, true );
 
     /* AOS */
     wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js');
@@ -101,21 +102,13 @@ function bolingier_header() {
     </aside>
     <div class="contentBolingier">
     <nav class="topNav flex">
-        <nav class="topNav__languages flex">
+        <nav class="topNav__languages flex d-desktop">
             <span>
                 Wybierz język
             </span>
-            <div>
-                <a class="topNav__languages__name flex" href="https://bolingier.skylo-test1.pl/test123">
-                    <img class="topNav__languages__flag" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/poland.svg'; ?>" alt="polski" />
-                    Polski
-                    <img class="topNav__languages__arrow" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-down.svg'; ?>"
-                </a>
-                <a class="topNav__languages__name flex topNav__languages__name--second" href="https://bolingier.skylo-test1.pl/en">
-                    <img class="topNav__languages__flag" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/united-states.svg'; ?>" alt="polski" />
-                    English
-                </a>
-            </div>
+            <?php
+                echo do_shortcode('[language-switcher]');
+            ?>
         </nav>
 
         <a class="topNav__logoWrapper" href="<?php echo get_home_url(); ?>">
@@ -123,7 +116,7 @@ function bolingier_header() {
         </a>
 
         <section class="topNav__right flex d-desktop">
-            <a class="topBar__right__btn flex" href="">
+            <a class="topBar__right__btn flex" href="/sklep">
                 <img class="topBar__right__btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/search.svg'; ?>" alt="szukaj" />
                 Wyszukiwarka
             </a>
@@ -151,116 +144,61 @@ function bolingier_header() {
                     Kategorie
                 </h4>
             </header>
-            <button class="menuMobile__closeBtn" onclick="closeMobileMenu()">
-                <img class="icon__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/long-arrow.svg'; ?>" alt="zamknij-menu" />
-                Wróć
-            </button>
-            <section class="topMenu__submenu__section">
-                <h3 class="topMenu__submenu__section__header">
-                    Dla niej
-                </h3>
-                <main class="topMenu__submenu__section__main flex">
-                    <section class="topMenu__submenu__category">
-                        <a class="topMenu__submenu__category__link" href="">
-                            Hard
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Kombinezony
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Body
-                        </a>
-                    </section>
-                    <section class="topMenu__submenu__category">
-                        <a class="topMenu__submenu__category__link" href="">
-                            Hard
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Kombinezony
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Body
-                        </a>
-                    </section>
-                    <section class="topMenu__submenu__category">
-                        <a class="topMenu__submenu__category__link" href="">
-                            Hard
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Kombinezony
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Body
-                        </a>
-                    </section>
-                    <section class="topMenu__submenu__category">
-                        <a class="topMenu__submenu__category__link" href="">
-                            Hard
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Kombinezony
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Body
-                        </a>
-                    </section>
-                </main>
-            </section>
-            <section class="topMenu__submenu__section">
-                <h3 class="topMenu__submenu__section__header">
-                    Dla niego
-                </h3>
-                <main class="topMenu__submenu__section__main flex">
-                    <section class="topMenu__submenu__category">
-                        <a class="topMenu__submenu__category__link" href="">
-                            Hard
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Kombinezony
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Body
-                        </a>
-                    </section>
-                    <section class="topMenu__submenu__category">
-                        <a class="topMenu__submenu__category__link" href="">
-                            Hard
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Kombinezony
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Body
-                        </a>
-                    </section>
-                    <section class="topMenu__submenu__category">
-                        <a class="topMenu__submenu__category__link" href="">
-                            Hard
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Kombinezony
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Body
-                        </a>
-                    </section>
-                    <section class="topMenu__submenu__category">
-                        <a class="topMenu__submenu__category__link" href="">
-                            Hard
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Kombinezony
-                        </a>
-                        <a class="topMenu__submenu__subcategory__link" href="">
-                            Body
-                        </a>
-                    </section>
-                </main>
-            </section>
+            <div class="flex">
+                <button class="menuMobile__closeBtn" onclick="closeMobileMenu()">
+                    <img class="icon__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/long-arrow.svg'; ?>" alt="zamknij-menu" />
+                    Wróć
+                </button>
+                <nav class="topNav__languages flex">
+                    <button class="topNav__languages--mobile" onclick="polish()">
+                        <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/poland.svg'; ?>" alt="polski" />
+                    </button>
+                    <button class="topNav__languages--mobile" onclick="english()">
+                        <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/united-states.svg'; ?>" alt="polski" />
+                    </button>
+                </nav>
+            </div>
+            <main class="shop__categories__menu">
+                <?php
+                function hierarchical_term_tree_main_menu($category = 0)
+                {
+                    $r = '';
+
+                    if($category == 0) {
+                        $args = array(
+                            'parent' => $category,
+                            'slug' => array('dla-niej', 'dla-niego'),
+                            'orderby' => 'name',
+                            'order' => 'DESC'
+                        );
+                    }
+                    else {
+                        $args = array(
+                            'parent' => $category
+                        );
+                    }
+
+                    $next = get_terms('product_cat', $args);
+
+                    if ($next) {
+                        $r .= '<ul>';
+
+                        foreach ($next as $cat) {
+                            $r .= '<li><a href="' . get_term_link($cat->slug, $cat->taxonomy) . '" title="' . sprintf(__("View all products in %s"), $cat->name) . '" ' . '>' . $cat->name . '</a>';
+                            $r .= $cat->term_id !== 0 ? hierarchical_term_tree_main_menu($cat->term_id) : null;
+                        }
+                        $r .= '</li>';
+
+                        $r .= '</ul>';
+                    }
+
+                    return $r;
+                }
+                    echo hierarchical_term_tree_main_menu();
+                ?>
+            </main>
         </main>
     </nav>
-
-
 
 
 
@@ -285,108 +223,11 @@ function bolingier_header() {
                     <img class="topMenu__submenu__img topMenu__submenu__img--male" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/male.svg'; ?>" alt="meskie" />
                     <img class="topMenu__submenu__img topMenu__submenu__img--famale" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/famale.svg'; ?>" alt="damskie" />
 
-                    <section class="topMenu__submenu__section">
-                        <h3 class="topMenu__submenu__section__header">
-                            Dla niej
-                        </h3>
-                        <main class="topMenu__submenu__section__main flex">
-                            <section class="topMenu__submenu__category">
-                                <a class="topMenu__submenu__category__link" href="">
-                                    Hard
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Kombinezony
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Body
-                                </a>
-                            </section>
-                            <section class="topMenu__submenu__category">
-                                <a class="topMenu__submenu__category__link" href="">
-                                    Hard
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Kombinezony
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Body
-                                </a>
-                            </section>
-                            <section class="topMenu__submenu__category">
-                                <a class="topMenu__submenu__category__link" href="">
-                                    Hard
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Kombinezony
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Body
-                                </a>
-                            </section>
-                            <section class="topMenu__submenu__category">
-                                <a class="topMenu__submenu__category__link" href="">
-                                    Hard
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Kombinezony
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Body
-                                </a>
-                            </section>
-                        </main>
-                    </section>
-                    <section class="topMenu__submenu__section">
-                        <h3 class="topMenu__submenu__section__header">
-                            Dla niego
-                        </h3>
-                        <main class="topMenu__submenu__section__main flex">
-                            <section class="topMenu__submenu__category">
-                                <a class="topMenu__submenu__category__link" href="">
-                                    Hard
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Kombinezony
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Body
-                                </a>
-                            </section>
-                            <section class="topMenu__submenu__category">
-                                <a class="topMenu__submenu__category__link" href="">
-                                    Hard
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Kombinezony
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Body
-                                </a>
-                            </section>
-                            <section class="topMenu__submenu__category">
-                                <a class="topMenu__submenu__category__link" href="">
-                                    Hard
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Kombinezony
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Body
-                                </a>
-                            </section>
-                            <section class="topMenu__submenu__category">
-                                <a class="topMenu__submenu__category__link" href="">
-                                    Hard
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Kombinezony
-                                </a>
-                                <a class="topMenu__submenu__subcategory__link" href="">
-                                    Body
-                                </a>
-                            </section>
-                        </main>
-                    </section>
+                    <menu class="shop__categories__menu">
+                        <?php
+                        echo hierarchical_term_tree_main_menu();
+                        ?>
+                    </menu>
                 </menu>
             </li>
             <li class="topMenu__list__item">
@@ -411,16 +252,69 @@ function bolingier_homepage() {
     ?>
     <main class="video">
         <video style="width: 100%;" autoplay loop muted playsinline>
-            <source src="<?php echo get_bloginfo('stylesheet_directory') . '/img/video.webm'; ?>" type="video/mp4">
+            <source src="<?php echo get_bloginfo('stylesheet_directory') . '/img/video.mp4'; ?>" type="video/mp4">
         </video>
     </main>
     <section class="homepage__products">
         <header class="homepage__products__header">
+            <button class="homepage__products__header__btn homepage__products__header__btn--prev d-mobile" onclick="prevSlider1()">
+                <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
+            </button>
             <h2 class="homepage__products__header__h flex">
                 Polecane produkty
             </h2>
+            <button class="homepage__products__header__btn d-mobile" onclick="nextSlider1()">
+                <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
+            </button>
         </header>
-        <main class="homepage__products__main flex">
+        <main class="homepage__products__main flex d-desktop">
+            <?php
+            $i = 0;
+            $loop = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'per_page' => 4,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'slug',
+                        'terms' => 'polecane'
+                    )
+                )
+            ));
+            if($loop->have_posts()) {
+                while($loop->have_posts()) {
+                    $loop->the_post();
+                    global $product;
+                    if($i < 4) {
+                        ?>
+                        <section class="homepage__productWrapper">
+                            <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
+                                <figure class="homepage__product__imgWrapper">
+                                    <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
+                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
+                                </figure>
+                                <h3 class="homepage__product__title">
+                                    <?php echo the_title(); ?>
+                                </h3>
+                                <section class="homepage__product__subtitle">
+                                    <?php echo $product->get_short_description(); ?>
+                                </section>
+                                <h4 class="homepage__product__price">
+                                    <?php echo $product->get_price_html(); ?>
+                                </h4>
+                            </a>
+                            <?php woocommerce_template_loop_add_to_cart($loop->post, $product); ?>
+                        </section>
+                        <?php
+                    }
+                    $i++;
+                }
+                wp_reset_postdata();
+            }
+            ?>
+        </main>
+        <main class="homepage__products__main--mobile1 d-mobile">
             <?php
             $loop = new WP_Query( array(
                 'post_type' => 'product',
@@ -443,13 +337,7 @@ function bolingier_homepage() {
                         <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
                             <figure class="homepage__product__imgWrapper">
                                 <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
-                                <?php
-                                if(get_field('drugie_zdjecie')) {
-                                    ?>
-                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
-                                    <?php
-                                }
-                                ?>
+                                <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
                             </figure>
                             <h3 class="homepage__product__title">
                                 <?php echo the_title(); ?>
@@ -473,11 +361,67 @@ function bolingier_homepage() {
 
     <section class="homepage__products">
         <header class="homepage__products__header">
+            <button class="homepage__products__header__btn homepage__products__header__btn--prev d-mobile" onclick="prevSlider2()">
+                <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
+            </button>
             <h2 class="homepage__products__header__h flex">
                 Promocje
             </h2>
+            <button class="homepage__products__header__btn d-mobile" onclick="nextSlider2()">
+                <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
+            </button>
         </header>
-        <main class="homepage__products__main flex">
+        <main class="homepage__products__main flex d-desktop">
+            <?php
+            $i = 0;
+            $loop = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'per_page' => 4,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'slug',
+                        'terms' => 'promocje'
+                    )
+                )
+            ));
+            if($loop->have_posts()) {
+                while($loop->have_posts()) {
+                    $loop->the_post();
+                    global $product;
+                    if($i < 4) {
+                        ?>
+                        <section class="homepage__productWrapper">
+                            <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
+                                <figure class="homepage__product__imgWrapper">
+                                <span class="homepage__product__imgWrapper__onsale">
+                                    Promocja!
+                                </span>
+                                    <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
+                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
+                                </figure>
+                                <h3 class="homepage__product__title">
+                                    <?php echo the_title(); ?>
+                                </h3>
+                                <section class="homepage__product__subtitle">
+                                    <?php echo $product->get_short_description(); ?>
+                                </section>
+                                <h4 class="homepage__product__price">
+                                    <?php echo $product->get_price_html(); ?>
+                                </h4>
+                            </a>
+                            <?php woocommerce_template_loop_add_to_cart($loop->post, $product); ?>
+                        </section>
+                        <?php
+                    }
+                    $i++;
+                }
+                wp_reset_postdata();
+            }
+            ?>
+        </main>
+        <main class="homepage__products__main--mobile2 d-mobile">
             <?php
             $loop = new WP_Query( array(
                 'post_type' => 'product',
@@ -503,13 +447,7 @@ function bolingier_homepage() {
                                     Promocja!
                                 </span>
                                 <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
-                                <?php
-                                if(get_field('drugie_zdjecie')) {
-                                    ?>
-                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
-                                    <?php
-                                }
-                                ?>
+                                <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
                             </figure>
                             <h3 class="homepage__product__title">
                                 <?php echo the_title(); ?>
@@ -559,17 +497,13 @@ function bolingier_homepage() {
                 </h2>
             </header>
             <main class="homepage__bottomContent">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales, urna quis dignissim malesuada, risus elit laoreet dolor, quis ornare lorem dui non lacus. Aliquam elementum et augue in dignissim. Integer in elit mauris. Etiam luctus mauris eu leo luctus, vitae congue erat sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed ultricies risus dolor, in sagittis magna ullamcorper in. Cras ut velit sapien. Pellentesque sodales interdum eros ut malesuada. Nullam ut rhoncus ligula, quis efficitur dui. Etiam quis dignissim massa, vel lobortis dolor. Vestibulum sit amet lacus sem. Sed fringilla imperdiet molestie. Nam sed purus sed sapien ullamcorper mollis ac quis nisi.
-                    <br/><br/>
-                    Curabitur ultrices quam nec leo malesuada, sed molestie nulla porttitor. Aenean magna lectus, ultrices in dolor sed, blandit ornare leo. Integer et enim feugiat, tristique orci ut, fringilla lacus. Aliquam rhoncus dui at mollis commodo. Pellentesque molestie augue vel leo lobortis, eu tristique nisl interdum. Vestibulum vel erat tellus. In nec rutrum lacus. Nunc orci leo, fermentum vitae condimentum id, convallis sit amet nibh. Curabitur sit amet risus ut purus malesuada pellentesque eget non diam. Maecenas vel ante tempor, suscipit elit eu, aliquam dolor.
-                    <br/><br/>
-                    Maecenas blandit nunc sit amet ligula convallis scelerisque. Phasellus ut nulla fringilla, dapibus leo eu, consequat urna. Integer fringilla libero vitae felis accumsan, eu aliquet libero tincidunt. Pellentesque lobortis pharetra posuere. Donec at justo porttitor, molestie quam at, elementum lectus. Donec pellentesque sem ut tincidunt dignissim. Curabitur finibus mi ac ante cursus convallis et id leo. Donec pretium aliquam semper. In ut sem mattis, porttitor justo et, pellentesque enim. Vivamus in lorem a quam porta ullamcorper quis vitae mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    <br/><br/>
-                    Donec placerat laoreet venenatis. Duis feugiat quam at ligula sollicitudin rhoncus. Ut magna libero, eleifend vel finibus eu, ultricies sit amet velit. Mauris ligula elit, iaculis ut blandit ut, lacinia vel ligula. Nullam vitae ornare velit, et auctor tellus. Morbi tincidunt ut nisl sed aliquam. Phasellus urna mauris, posuere vel gravida eu, pharetra at ligula. Suspendisse ut dolor nec neque placerat rhoncus id nec eros. Aliquam semper risus diam, in gravida erat feugiat sed. Mauris mollis, odio nec faucibus consectetur, nulla nibh facilisis lorem, et interdum est urna ut mi. Suspendisse dapibus iaculis velit. Ut semper porta tellus, in sagittis neque placerat at. Aliquam feugiat nunc elit, et commodo turpis rhoncus id.
-                    <br/><br/>
-                    Morbi ullamcorper ultrices turpis sed venenatis. Maecenas efficitur consequat porttitor. Aliquam ultricies neque augue, et vehicula elit egestas non. Morbi gravida venenatis dui, et luctus risus tempor at. Donec mollis orci a ante fermentum, in cursus purus egestas. Suspendisse consequat est vitae dictum egestas. Nullam nec velit vitae dui faucibus lobortis. Curabitur lorem eros, condimentum at dolor eu, placerat sagittis orci. Proin blandit nec felis vitae pulvinar. Nulla ullamcorper commodo consectetur. Proin nec placerat felis. Mauris nec facilisis nulla.
-                </p>
+                <?php
+                    $your_query = new WP_Query( 'pagename=o-nas' );
+                    while ( $your_query->have_posts() ) : $your_query->the_post();
+                        the_content();
+                    endwhile;
+                    wp_reset_postdata();
+                ?>
             </main>
         </section>
 
@@ -681,31 +615,38 @@ function bolingier_footer() {
                         </li>
                     </ul>
                 </section>
+                <?php
+                    function get_subcategories($category)
+                    {
+                        $args = array(
+                            'parent' => $category,
+                        );
+
+                        $next = get_terms('product_cat', $args);
+
+                        if ($next) {
+                            foreach ($next as $cat) {
+                                ?>
+                                <li class="footer__list__item">
+                                    <a class="footer__list__item__link" href="<?php echo get_term_link($cat->slug, $cat->taxonomy); ?>">
+                                        <?php echo $cat->name; ?>
+                                    </a>
+                                </li>
+                                    <?php
+                            }
+                        }
+                    }
+                ?>
                 <section class="footer__col">
                     <h5 class="footer__header">
                         Produkty damskie
                     </h5>
                     <ul class="footer__list">
-                        <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Hard
-                            </a>
-                        </li>
-                        <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Soft
-                            </a>
-                        </li>
-                        <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Obuwie
-                            </a>
-                        </li>
-                        <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Akcesoria
-                            </a>
-                        </li>
+                        <?php
+                            $category = get_term_by( 'slug', 'dla-niej', 'product_cat' );
+                            $cat_id = $category->term_id;
+                            get_subcategories($cat_id);
+                        ?>
                     </ul>
                 </section>
                 <section class="footer__col">
@@ -713,26 +654,11 @@ function bolingier_footer() {
                         Produkty męskie
                     </h5>
                     <ul class="footer__list">
-                        <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Hard
-                            </a>
-                        </li>
-                        <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Soft
-                            </a>
-                        </li>
-                        <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Obuwie
-                            </a>
-                        </li>
-                        <li class="footer__list__item">
-                            <a class="footer__list__item__link" href="">
-                                Akcesoria
-                            </a>
-                        </li>
+                        <?php
+                        $category = get_term_by( 'slug', 'dla-niego', 'product_cat' );
+                        $cat_id = $category->term_id;
+                        get_subcategories($cat_id);
+                        ?>
                     </ul>
                 </section>
                 <section class="footer__col">
@@ -740,8 +666,10 @@ function bolingier_footer() {
                         Dane firmy
                     </h5>
                     <p class="footer__text">
-                        BOLINGIER FASHION STYLE<br/><br/>
-                        ul. Szeroka 54, 42-700 Lubliniec<br/><br/>
+                        BOLINGIER FASHION STYLE<br/>
+                        <span class="d-desktop"><br/></span>
+                        ul. Szeroka 54, 42-700 Lubliniec<br/>
+                        <span class="d-desktop"><br/></span>
                         NIP: 5751318248<br/>
                         REGON: 240543571<br/>
                         Bank SA<br/>
@@ -804,7 +732,109 @@ add_action('woocommerce_single_variation', 'bolingier_single_variation');
 
 function bolingier_after_single_product() {
     ?>
-
+    <section class="homepage__products">
+        <header class="homepage__products__header">
+            <button class="homepage__products__header__btn homepage__products__header__btn--prev d-mobile" onclick="prevSlider1()">
+                <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
+            </button>
+            <h2 class="homepage__products__header__h flex">
+                Polecane produkty
+            </h2>
+            <button class="homepage__products__header__btn d-mobile" onclick="nextSlider1()">
+                <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
+            </button>
+        </header>
+        <main class="homepage__products__main flex d-desktop">
+            <?php
+            $i = 0;
+            $loop = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'per_page' => 4,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'slug',
+                        'terms' => 'polecane'
+                    )
+                )
+            ));
+            if($loop->have_posts()) {
+                while($loop->have_posts()) {
+                    $loop->the_post();
+                    global $product;
+                    if($i < 4) {
+                        ?>
+                        <section class="homepage__productWrapper">
+                            <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
+                                <figure class="homepage__product__imgWrapper">
+                                    <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
+                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
+                                </figure>
+                                <h3 class="homepage__product__title">
+                                    <?php echo the_title(); ?>
+                                </h3>
+                                <section class="homepage__product__subtitle">
+                                    <?php echo $product->get_short_description(); ?>
+                                </section>
+                                <h4 class="homepage__product__price">
+                                    <?php echo $product->get_price_html(); ?>
+                                </h4>
+                            </a>
+                            <?php woocommerce_template_loop_add_to_cart($loop->post, $product); ?>
+                        </section>
+                        <?php
+                    }
+                    $i++;
+                }
+                wp_reset_postdata();
+            }
+            ?>
+        </main>
+        <main class="homepage__products__main--mobile1 d-mobile">
+            <?php
+            $loop = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'per_page' => 4,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'slug',
+                        'terms' => 'polecane'
+                    )
+                )
+            ));
+            if($loop->have_posts()) {
+                while($loop->have_posts()) {
+                    $loop->the_post();
+                    global $product;
+                    ?>
+                    <section class="homepage__productWrapper">
+                        <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
+                            <figure class="homepage__product__imgWrapper">
+                                <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
+                                <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
+                            </figure>
+                            <h3 class="homepage__product__title">
+                                <?php echo the_title(); ?>
+                            </h3>
+                            <section class="homepage__product__subtitle">
+                                <?php echo $product->get_short_description(); ?>
+                            </section>
+                            <h4 class="homepage__product__price">
+                                <?php echo $product->get_price_html(); ?>
+                            </h4>
+                        </a>
+                        <?php woocommerce_template_loop_add_to_cart($loop->post, $product); ?>
+                    </section>
+                    <?php
+                }
+                wp_reset_postdata();
+            }
+            ?>
+        </main>
+    </section>
     <section class="points">
         <h3 class="points__header">
             Jesteśmy wyjątkowi, poznaj nasze zalety

@@ -71,13 +71,7 @@ $categorySlug = $cate->slug;
                             <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
                                 <figure class="homepage__product__imgWrapper">
                                     <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
-                                    <?php
-                                    if(get_field('drugie_zdjecie')) {
-                                        ?>
-                                        <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
-                                        <?php
-                                    }
-                                    ?>
+                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
                                 </figure>
                                 <h3 class="homepage__product__title">
                                     <?php echo the_title(); ?>
@@ -182,13 +176,7 @@ $categorySlug = $cate->slug;
                             <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
                                 <figure class="homepage__product__imgWrapper">
                                     <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
-                                    <?php
-                                    if(get_field('drugie_zdjecie')) {
-                                        ?>
-                                        <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
-                                        <?php
-                                    }
-                                    ?>
+                                    <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
                                 </figure>
                                 <h3 class="homepage__product__title">
                                     <?php echo the_title(); ?>
@@ -302,13 +290,7 @@ $categorySlug = $cate->slug;
                         <a class="homepage__product" href="<?php echo get_permalink( $product->get_id() ); ?>">
                             <figure class="homepage__product__imgWrapper">
                                 <img class="homepage__product__img" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
-                                <?php
-                                    if(get_field('drugie_zdjecie')) {
-                                        ?>
-                                        <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
-                                            <?php
-                                    }
-                                ?>
+                                <img class="homepage__product__img homepage__product__img--2" src="<?php echo get_field('drugie_zdjecie'); ?>" />
                             </figure>
                             <h3 class="homepage__product__title">
                                 <?php echo the_title(); ?>
