@@ -96,9 +96,9 @@ add_action('wp_head', 'remove_header_actions');
 function bolingier_header() {
     ?>
     <aside class="topBar flex">
-        <h5 class="topBar__header">
-            <b>RABAT 15%</b> tylko do 30.11.2021! Użyj kodu <b>EROTIC10</b>.
-        </h5>
+            <?php
+                echo get_field('gorna_belka', 12);
+            ?>
     </aside>
     <div class="contentBolingier">
     <nav class="topNav flex">
@@ -267,7 +267,7 @@ function bolingier_homepage() {
                 <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
             </button>
         </header>
-        <main class="homepage__products__main flex d-desktop">
+        <main class="homepage__products__main flex d-desktop" data-aos="fade-in">
             <?php
             $i = 0;
             $loop = new WP_Query( array(
@@ -314,7 +314,7 @@ function bolingier_homepage() {
             }
             ?>
         </main>
-        <main class="homepage__products__main--mobile1 d-mobile">
+        <main class="homepage__products__main--mobile1 d-mobile" data-aos="fade-in">
             <?php
             $loop = new WP_Query( array(
                 'post_type' => 'product',
@@ -371,7 +371,7 @@ function bolingier_homepage() {
                 <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
             </button>
         </header>
-        <main class="homepage__products__main flex d-desktop">
+        <main class="homepage__products__main flex d-desktop" data-aos="fade-in">
             <?php
             $i = 0;
             $loop = new WP_Query( array(
@@ -421,7 +421,7 @@ function bolingier_homepage() {
             }
             ?>
         </main>
-        <main class="homepage__products__main--mobile2 d-mobile">
+        <main class="homepage__products__main--mobile2 d-mobile" data-aos="fade-in">
             <?php
             $loop = new WP_Query( array(
                 'post_type' => 'product',
@@ -472,25 +472,25 @@ function bolingier_homepage() {
     </div>
     </div>
     <section class="homepage__fullWidth flex">
-        <article class="homepage__fullWidth__left">
+        <article class="homepage__fullWidth__left" data-aos="fade-in">
             <h3 class="homepage__fullWidth__left__header">
-                Odzież erotyczna - dodaj życiu odrobinę rozkoszy
+                <?php echo get_field('naglowek', 12); ?>
             </h3>
             <p class="homepage__fullWidth__left__text">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+               <?php echo get_field('tekst', 12); ?>
             </p>
             <a class="homepage__fullWidth__left__btn flex" href="<?php echo get_permalink(wc_get_page_id( 'shop' )); ?>">
                 Zobacz wszystkie produkty
                 <img class="homepage__fullWidth__left__btn__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/long-arrow.svg'; ?>" alt="produkty" />
             </a>
         </article>
-        <figure class="homepage__fullWidth__right">
+        <figure class="homepage__fullWidth__right" data-aos="fade-in">
             <img class="homepage__fullWidth__right__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="bolingier" />
         </figure>
     </section>
 
     <div class="contentBolingier">
-        <section class="homepage__products">
+        <section class="homepage__products" data-aos="fade-in">
             <header class="homepage__products__header">
                 <h2 class="homepage__products__header__h flex">
                     Bolingier.com
@@ -511,7 +511,7 @@ function bolingier_homepage() {
             <h3 class="points__header">
                 Jesteśmy wyjątkowi, poznaj nasze zalety
             </h3>
-            <main class="points__main flex">
+            <main class="points__main flex" data-aos="fade-in">
                 <section class="points__item flex">
                     <figure class="points__item__imgWrapper flex">
                         <img class="points__item__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/gift.svg'; ?>" alt="prezent" />

@@ -86,3 +86,5 @@ if(window.innerWidth < 768) {
         }
     }
 }
+
+AOS.init();

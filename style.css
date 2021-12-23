@@ -1685,3 +1685,13 @@ a {
 .topBar__right__btn:last-of-type > img {
     width: 19px !important;
 }
+
+.woocommerce-shipping-totals td p,
+.woocommerce-shipping-calculator,
+#ship-to-different-address {
+    display: none !important;
+}
+
+.woocommerce-cart .woocommerce-shipping-totals > th {
+    padding-left: 0 !important;
+}
