@@ -95,11 +95,17 @@ add_action('wp_head', 'remove_header_actions');
 
 function bolingier_header() {
     ?>
-    <aside class="topBar flex">
-            <?php
-                echo get_field('gorna_belka', 12);
+    <?php
+        if(get_field('gorna_belka', 12)) {
             ?>
-    </aside>
+            <aside class="topBar flex">
+                <?php
+                echo get_field('gorna_belka', 12);
+                ?>
+            </aside>
+                <?php
+        }
+    ?>
     <div class="contentBolingier">
     <nav class="topNav flex">
         <nav class="topNav__languages flex d-desktop">

@@ -221,6 +221,10 @@
         display: none;
     }
 
+    .single-product .price {
+        position: relative;
+    }
+
     .video {
         height: auto;
     }
@@ -603,9 +607,17 @@
     }
 
     .woo-variation-swatches .variable-items-wrapper > li {
-        margin: 0 10px !important;
+        margin: 0 10px 10px !important;
     }
 
+    .woocommerce-variation-price .woocommerce-Price-amount {
+        display: block;
+        margin: auto;
+    }
+
+    .woocommerce-variation-availability {
+        text-align: center;
+    }
 }
 
 @media(max-width: 576px) {

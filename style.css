@@ -1227,6 +1227,17 @@ table.cart td.actions input {
     margin: 0 !important;
     width: 30%;
     text-align: right;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.single-product .woocommerce-variation-price .price {
+    position: relative;
+    top: unset;
+    right: unset;
+    text-align: left;
 }
 
 .woocommerce-LoopProduct-link .price {
@@ -1236,7 +1247,7 @@ table.cart td.actions input {
 .single-product .price,
 .single-product .price * {
     color: #AF0000 !important;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -1257,6 +1268,10 @@ table.cart td.actions input {
     font-size: 15px;
     width: 100%;
     margin-top: -15px !important;
+}
+
+.single-product .woocommerce-product-details__short-description p {
+    margin-top: 10px;
 }
 
 .single-product .single_add_to_cart_button {
@@ -1694,4 +1709,8 @@ a {
 
 .woocommerce-cart .woocommerce-shipping-totals > th {
     padding-left: 0 !important;
+}
+
+.variable-items-wrapper li {
+    margin-bottom: 10px !important;
 }
