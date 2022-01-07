@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab20b0b1-05f1-4466-a9d0-d507c29f1255" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/img/mute.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/sound.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/video-2.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/video.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/img/video-1.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/mobile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
@@ -39,17 +44,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\assets\js" />
       <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\img" />
+      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\assets\js" />
       <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier" />
+      <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\assets" />
       <recent name="C:\Users\sajmo\Desktop\Programowanie\Projekty\bolingier\html" />
     </key>
   </component>
@@ -69,6 +76,10 @@
       <workItem from="1640656004666" duration="1384000" />
       <workItem from="1640732878079" duration="100000" />
       <workItem from="1640740446548" duration="1785000" />
+      <workItem from="1640787318522" duration="2633000" />
+      <workItem from="1641212236706" duration="707000" />
+      <workItem from="1641307909306" duration="45000" />
+      <workItem from="1641583467877" duration="7351000" />
     </task>
     <servers />
   </component>

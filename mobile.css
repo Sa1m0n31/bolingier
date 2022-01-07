@@ -618,6 +618,12 @@
     .woocommerce-variation-availability {
         text-align: center;
     }
+
+    .soundBtn {
+        bottom: 20px;
+        right: 10px;
+        width: 20px;
+    }
 }
 
 @media(max-width: 576px) {
@@ -627,5 +633,11 @@
 
     .footer__list__item__link {
         margin: 6px 0;
+    }
+
+    .pum-container, .pum-theme-standardowa-skorka .pum-container {
+        max-width: 90% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
 }

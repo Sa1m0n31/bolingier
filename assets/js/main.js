@@ -1,3 +1,34 @@
+let count = 1;
+const videoEnd = (e) => {
+    if(!e)
+    {
+        e = window.event;
+    }
+
+    if(count === 1) count = 2;
+    else count = 1;
+
+    const currentSrc = source.getAttribute('src').split('/');
+    currentSrc.pop();
+    const srcBeginning = currentSrc.join('/');
+
+    source.setAttribute('src', `${srcBeginning}/video-${count}.mp4`);
+    video.load();
+    video.play();
+}
+
+const video = document.getElementById('mp4Video');
+const source = document.getElementById('mp4Source');
+video.addEventListener('ended', videoEnd, false);
+
+const closePopup = () => {
+    const pum = document.querySelector('.pum');
+    pum.style.opacity = '0';
+    setTimeout(() => {
+        pum.style.display = 'none';
+    }, 500);
+}
+
 const showSubmenu = () => {
     const submenu = document.querySelector('.topMenu__submenu');
 
@@ -85,6 +116,25 @@ if(window.innerWidth < 768) {
             document.querySelector('.topNav__logoWrapper').style.transform = 'translate(-50%, -110%)';
         }
     }
+}
+
+let muted = true;
+
+const toggleVideoSound = () => {
+    const video = document.querySelector('.video>video');
+    const mutedEl = document.querySelector('.muted');
+    const unmutedEL = document.querySelector('.unmuted');
+    video.muted ^= 1;
+
+    if(muted) {
+        mutedEl.style.display = 'none';
+        unmutedEL.style.display = 'block';
+    }
+    else {
+        mutedEl.style.display = 'block';
+        unmutedEL.style.display = 'none';
+    }
+    muted = !muted;
 }
 
 AOS.init();
