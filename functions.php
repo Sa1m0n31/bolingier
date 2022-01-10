@@ -71,8 +71,8 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  */
 
 function bolingier_scripts() {
-    wp_enqueue_style( 'css', get_template_directory_uri() . '/style.css?n=3', array(), _S_VERSION );
-    wp_enqueue_style( 'css-mobile', get_template_directory_uri() . '/mobile.css?n=2', array(), _S_VERSION );
+    wp_enqueue_style( 'css', get_template_directory_uri() . '/style.css?n=6', array(), _S_VERSION );
+    wp_enqueue_style( 'css-mobile', get_template_directory_uri() . '/mobile.css?n=4', array(), _S_VERSION );
 
     wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js?n=1', array('aos-js', 'siema-js'), _S_VERSION, true );
     wp_enqueue_script( 'siema-js', get_template_directory_uri() . '/assets/js/siema.js', array('aos-js'), _S_VERSION, true );
@@ -264,6 +264,13 @@ function bolingier_homepage() {
         <button class="soundBtn" onclick="toggleVideoSound()">
             <img class="btn__img muted" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/mute.svg'; ?>" alt="glosnik" />
             <img class="btn__img unmuted" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/sound.svg'; ?>" alt="glosnik" />
+        </button>
+
+        <button class="arrowVideo arrowVideo--prev" onclick="nextVideo()">
+            <img class="btn__img muted" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-down.svg'; ?>" alt="glosnik" />
+        </button>
+        <button class="arrowVideo arrowVideo--next" onclick="nextVideo()">
+            <img class="btn__img muted" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-down.svg'; ?>" alt="glosnik" />
         </button>
     </main>
     <section class="homepage__products">
@@ -683,8 +690,8 @@ function bolingier_footer() {
                         <span class="d-desktop"><br/></span>
                         NIP: 5751318248<br/>
                         REGON: 240543571<br/>
-                        Bank SA<br/>
-                        1010 1010 1010 10101010101
+                        Bank Inteligo<br/>
+                        50 1020 5558 1111 1361 8020 0096
                     </p>
                 </section>
             </section>

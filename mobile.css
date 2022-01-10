@@ -622,7 +622,18 @@
     .soundBtn {
         bottom: 20px;
         right: 10px;
-        width: 20px;
+        width: 10px;
+    }
+
+    .arrowVideo {
+        top: 40%;
+        left: 0;
+        width: 25px;
+    }
+
+    .arrowVideo--next {
+        left: unset;
+        right: 0;
     }
 }
 

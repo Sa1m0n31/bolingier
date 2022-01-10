@@ -21,12 +21,8 @@ const video = document.getElementById('mp4Video');
 const source = document.getElementById('mp4Source');
 video.addEventListener('ended', videoEnd, false);
 
-const closePopup = () => {
-    const pum = document.querySelector('.pum');
-    pum.style.opacity = '0';
-    setTimeout(() => {
-        pum.style.display = 'none';
-    }, 500);
+const nextVideo = () => {
+    videoEnd(true);
 }
 
 const showSubmenu = () => {

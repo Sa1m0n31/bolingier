@@ -1779,3 +1779,36 @@ a {
     background-color: var(--dark) !important;
     color: #fff !important;
 }
+
+.dataTables_wrapper {
+    max-width: 900px;
+}
+
+.arrowVideo {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 10px;
+    width: 45px;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.arrowVideo .btn__img {
+    filter: brightness(0);
+}
+
+.arrowVideo--next {
+    left: unset;
+    right: 10px;
+}
+
+.arrowVideo--prev {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.arrowVideo--next {
+    transform: translateY(-50%) rotate(270deg);
+}
