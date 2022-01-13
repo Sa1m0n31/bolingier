@@ -71,11 +71,11 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  */
 
 function bolingier_scripts() {
-    wp_enqueue_style( 'css', get_template_directory_uri() . '/style.css?n=6', array(), _S_VERSION );
-    wp_enqueue_style( 'css-mobile', get_template_directory_uri() . '/mobile.css?n=4', array(), _S_VERSION );
+    wp_enqueue_style( 'css', get_template_directory_uri() . '/style.css?n=6', array(), 1.1 );
+    wp_enqueue_style( 'css-mobile', get_template_directory_uri() . '/mobile.css?n=4', array(), 1.1 );
 
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js?n=1', array('aos-js', 'siema-js'), _S_VERSION, true );
-    wp_enqueue_script( 'siema-js', get_template_directory_uri() . '/assets/js/siema.js', array('aos-js'), _S_VERSION, true );
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js?n=2', array('aos-js', 'siema-js'), 1.1, true );
+    wp_enqueue_script( 'siema-js', get_template_directory_uri() . '/assets/js/siema.js', array('aos-js'), 1.1, true );
 
     /* AOS */
     wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js');
@@ -503,7 +503,7 @@ function bolingier_homepage() {
             </a>
         </article>
         <figure class="homepage__fullWidth__right" data-aos="fade-in">
-            <img class="homepage__fullWidth__right__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.png'; ?>" alt="bolingier" />
+            <img class="homepage__fullWidth__right__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.jpg'; ?>" alt="bolingier" />
         </figure>
     </section>
 

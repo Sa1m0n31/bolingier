@@ -19,7 +19,7 @@ const videoEnd = (e) => {
 
 const video = document.getElementById('mp4Video');
 const source = document.getElementById('mp4Source');
-video.addEventListener('ended', videoEnd, false);
+if(video) video.addEventListener('ended', videoEnd, false);
 
 const nextVideo = () => {
     videoEnd(true);
