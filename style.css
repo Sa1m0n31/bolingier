@@ -40,6 +40,10 @@ Images License: GNU General Public License v2 or later
     color: #fff;
 }
 
+body {
+    padding-top: 20px !important;
+}
+
 .d-none,
 .onsale,
 .page-template-default .storefront-breadcrumb,
@@ -449,14 +453,19 @@ a {
 }
 
 .homepage__fullWidth {
-    height: 600px;
+    height: 500px;
     background: var(--darkSecondary);
     padding-left: clamp(5vw, calc((100vw - 1360px) / 2), calc((100vw - 1360px) / 2));
 }
 
 .homepage__fullWidth__left {
     width: 50%;
-    padding-right: 20%;
+    padding-right: 15%;
+}
+
+.homepage__fullWidth__img {
+    width: 100%;
+    height: auto;
 }
 
 .homepage__fullWidth__left__header {
@@ -500,11 +509,9 @@ a {
     width: auto;
     height: 100%;
     overflow: hidden;
-}
-
-.homepage__fullWidth__right__img {
-    min-width: 100%;
-    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .homepage__bottomContent p {
@@ -796,7 +803,7 @@ a {
 
 .topMenu__submenu .shop__categories__menu > ul > li > ul > li:last-of-type,
 .menuMobile .shop__categories__menu > ul > li > ul > li:last-of-type {
-    margin-top: -50px !important;
+    margin-top: -30px !important;
 }
 
 .shop__categories__header {
@@ -1037,6 +1044,7 @@ table.cart td.actions input {
     background-color: transparent !important;
 }
 
+.widget-area,
 .woocommerce-order-received ul.order_details::after,
 .woocommerce-order-received ul.order_details::before {
     display: none !important;
@@ -1369,8 +1377,20 @@ table.cart td.actions input {
 }
 
 .storefront-breadcrumb {
-    padding-top: 0 !important;
-    margin-bottom: 15px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+@media(min-width: 996px) {
+    .storefront-breadcrumb {
+        margin-top: 15px !important;
+        padding-top: 0 !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+.trp-ls-shortcode-current-language {
+    width: auto !important;
 }
 
 .archive .topMenu,
@@ -1526,6 +1546,11 @@ form[role=search] button {
     margin-bottom: 0 !important;
 }
 
+#payment .place-order .button {
+    border: 1px solid #fff !important;
+    border-color: #fff !important;
+}
+
 a {
     outline: none !important;
 }
@@ -1539,6 +1564,10 @@ a {
 .page-template-default .zw-table div,
 .page-template-default .zw-table span {
     border: none !important;
+}
+
+label[data-automation-id=woo-commerce-subscription-opt-in] {
+    display: none !important;
 }
 
 .home .entry-content {
@@ -1818,6 +1847,10 @@ a {
     transform: translateY(-50%) rotate(270deg);
 }
 
+.stock {
+    display: none !important;
+}
+
 .wc_payment_method > input {
     clip: unset !important;
     -webkit-clip-path: unset !important;
@@ -1829,4 +1862,19 @@ a {
     display: block !important;
     opacity: 1 !important;
     outline: none !important;
+    visibility: hidden !important;
+}
+
+.singleProduct__description__header {
+    width: 100%;
+}
+
+.contentBolingier .wpgs-for .slick-arrow::before,
+.contentBolingier .wpgs-nav .slick-prev::before,
+.contentBolingier .wpgs-nav .slick-next::before {
+    color: #fff !important;
+}
+
+.searchform {
+    margin-bottom: 0 !important;
 }

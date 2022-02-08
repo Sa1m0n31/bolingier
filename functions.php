@@ -71,10 +71,10 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  */
 
 function bolingier_scripts() {
-    wp_enqueue_style( 'css', get_template_directory_uri() . '/style.css?n=6', array(), 1.1 );
-    wp_enqueue_style( 'css-mobile', get_template_directory_uri() . '/mobile.css?n=4', array(), 1.1 );
+    wp_enqueue_style( 'css', get_template_directory_uri() . '/style.css?n=18', array(), 1.1 );
+    wp_enqueue_style( 'css-mobile', get_template_directory_uri() . '/mobile.css?n=12', array(), 1.1 );
 
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js?n=2', array('aos-js', 'siema-js'), 1.1, true );
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js?n=10', array('aos-js', 'siema-js'), 1.1, true );
     wp_enqueue_script( 'siema-js', get_template_directory_uri() . '/assets/js/siema.js', array('aos-js'), 1.1, true );
 
     /* AOS */
@@ -123,7 +123,7 @@ function bolingier_header() {
         </a>
 
         <section class="topNav__right flex d-desktop">
-            <a class="topBar__right__btn flex" href="/sklep">
+            <a class="topBar__right__btn flex" href="/sklep?szukaj=true">
                 <img class="topBar__right__btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/search.svg'; ?>" alt="szukaj" />
                 Wyszukiwarka
             </a>
@@ -140,7 +140,7 @@ function bolingier_header() {
         <a class="topMenu--mobile__item" href="/koszyk">
             <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/shopping-bag.svg'; ?>" alt="menu" />
         </a>
-        <a class="topMenu--mobile__item" href="/sklep">
+        <a class="topMenu--mobile__item" href="/sklep?szukaj=true">
             <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/search.svg'; ?>" alt="menu" />
         </a>
     </menu>
@@ -253,11 +253,10 @@ function bolingier_header() {
 }
 
 add_action('storefront_before_content', 'bolingier_header', 10);
-add_action('wp_head', 'remove_homepage');
 
 function bolingier_homepage() {
     ?>
-    <main class="video">
+    <main class="video d-desktop">
         <video style="width: 100%;" autoplay muted playsinline id="mp4Video">
             <source id="mp4Source" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/video-1.mp4'; ?>" type="video/mp4">
         </video>
@@ -273,6 +272,15 @@ function bolingier_homepage() {
             <img class="btn__img muted" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-down.svg'; ?>" alt="glosnik" />
         </button>
     </main>
+    <main class="video video--mobile d-mobile">
+        <video style="width: 100%;" autoplay muted loop playsinline id="mp4Video2">
+            <source id="mp4Source" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/video-mobile.mp4'; ?>" type="video/mp4">
+        </video>
+        <button class="soundBtn" onclick="toggleVideoSoundMobile()">
+            <img class="btn__img muted muted--mobile" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/mute.svg'; ?>" alt="glosnik" />
+            <img class="btn__img unmuted unmuted--mobile" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/sound.svg'; ?>" alt="glosnik" />
+        </button>
+    </main>
     <section class="homepage__products">
         <header class="homepage__products__header">
             <button class="homepage__products__header__btn homepage__products__header__btn--prev d-mobile" onclick="prevSlider1()">
@@ -285,7 +293,7 @@ function bolingier_homepage() {
                 <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
             </button>
         </header>
-        <main class="homepage__products__main flex d-desktop" data-aos="fade-in">
+        <main class="homepage__products__main flex d-desktop">
             <?php
             $i = 0;
             $loop = new WP_Query( array(
@@ -332,7 +340,7 @@ function bolingier_homepage() {
             }
             ?>
         </main>
-        <main class="homepage__products__main--mobile1 d-mobile" data-aos="fade-in">
+        <main class="homepage__products__main--mobile1 d-mobile">
             <?php
             $loop = new WP_Query( array(
                 'post_type' => 'product',
@@ -389,7 +397,7 @@ function bolingier_homepage() {
                 <img class="btn__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-long.svg'; ?>" alt="poprzedni" />
             </button>
         </header>
-        <main class="homepage__products__main flex d-desktop" data-aos="fade-in">
+        <main class="homepage__products__main flex d-desktop">
             <?php
             $i = 0;
             $loop = new WP_Query( array(
@@ -439,7 +447,7 @@ function bolingier_homepage() {
             }
             ?>
         </main>
-        <main class="homepage__products__main--mobile2 d-mobile" data-aos="fade-in">
+        <main class="homepage__products__main--mobile2 d-mobile">
             <?php
             $loop = new WP_Query( array(
                 'post_type' => 'product',
@@ -490,25 +498,25 @@ function bolingier_homepage() {
     </div>
     </div>
     <section class="homepage__fullWidth flex">
-        <article class="homepage__fullWidth__left" data-aos="fade-in">
+        <article class="homepage__fullWidth__left">
             <h3 class="homepage__fullWidth__left__header">
-                <?php echo get_field('naglowek', 12); ?>
+                <?php echo get_field('naglowek', 295); ?>
             </h3>
             <p class="homepage__fullWidth__left__text">
-               <?php echo get_field('tekst', 12); ?>
+               <?php echo get_field('tekst', 295); ?>
             </p>
             <a class="homepage__fullWidth__left__btn flex" href="<?php echo get_permalink(wc_get_page_id( 'shop' )); ?>">
                 Zobacz wszystkie produkty
                 <img class="homepage__fullWidth__left__btn__icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/long-arrow.svg'; ?>" alt="produkty" />
             </a>
         </article>
-        <figure class="homepage__fullWidth__right" data-aos="fade-in">
-            <img class="homepage__fullWidth__right__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.jpg'; ?>" alt="bolingier" />
+        <figure class="homepage__fullWidth__right">
+            <img class="homepage__fullWidth__right__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/big-image.jpg?n=1'; ?>" alt="bolingier" />
         </figure>
     </section>
 
     <div class="contentBolingier">
-        <section class="homepage__products" data-aos="fade-in">
+        <section class="homepage__products">
             <header class="homepage__products__header">
                 <h2 class="homepage__products__header__h flex">
                     Bolingier.com
@@ -529,7 +537,7 @@ function bolingier_homepage() {
             <h3 class="points__header">
                 Jesteśmy wyjątkowi, poznaj nasze zalety
             </h3>
-            <main class="points__main flex" data-aos="fade-in">
+            <main class="points__main flex">
                 <section class="points__item flex">
                     <figure class="points__item__imgWrapper flex">
                         <img class="points__item__img" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/gift.svg'; ?>" alt="prezent" />
@@ -974,4 +982,35 @@ function auto_add_product_attributes( $post_id, $post, $update  ) {
     $product->set_attributes( $data );
 
     $product->save(); // Save the product
+}
+
+add_shortcode( 'product_cat_list', 'list_product_categories' );
+function list_product_categories( $atts ){
+    $atts = shortcode_atts( array(
+        'id' => get_the_id(),
+    ), $atts, 'product_cat_list' );
+
+    $output    = []; // Initialising
+    $taxonomy  = 'product_cat'; // Taxonomy for product category
+
+    // Get the product categories terms ids in the product:
+    $terms_ids = wp_get_post_terms( $atts['id'], $taxonomy, array('fields' => 'ids') );
+
+    // Loop though terms ids (product categories)
+    foreach( $terms_ids as $term_id ) {
+        $term_names = []; // Initialising category array
+
+        // Loop through product category ancestors
+        foreach( get_ancestors( $term_id, $taxonomy ) as $ancestor_id ){
+            // Add the ancestors term names to the category array
+            $term_names[] = get_term( $ancestor_id, $taxonomy )->name;
+        }
+        // Add the product category term name to the category array
+        $term_names[] = get_term( $term_id, $taxonomy )->name;
+
+        // Add the formatted ancestors with the product category to main array
+        $output[] = implode(' > ', $term_names);
+    }
+    // Output the formatted product categories with their ancestors
+    return '"' . implode('" | "', $output) . '"';
 }

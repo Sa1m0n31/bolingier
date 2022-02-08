@@ -14,10 +14,22 @@ $categorySlug = $cate->slug;
     <?php
     if(is_search()) {
         ?>
-        <header class="homepage__products__header">
+        <header class="homepage__products__header flex">
             <h2 class="homepage__products__header__h flex">
                 Wyniki wyszukiwania
             </h2>
+            <div>
+                <form role="search" method="get" id="searchform" class="searchform" action="//bolingier.com/sklep">
+                    <div class="box">
+                        <div class="container-1">
+                            <input type="text" value="" name="s" id="s" placeholder="Szukaj produktu..." />
+                            <button type="submit" id="searchsubmit" />
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </header>
         <main class="shop flex">
             <nav class="shop__categories">
@@ -118,11 +130,23 @@ $categorySlug = $cate->slug;
     }
     else if($category == 'product') {
         ?>
-        <header class="homepage__products__header">
+        <header class="homepage__products__header flex">
             <h2 class="homepage__products__header__h flex" onclick="openMobileMenuOnMobile()">
                 Sklep
                 <img class="d-mobile icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-down.svg'; ?>" alt="rozwin" />
             </h2>
+            <div>
+                <form role="search" method="get" id="searchform" class="searchform" action="//bolingier.com/sklep">
+                    <div class="box">
+                        <div class="container-1">
+                            <input type="text" value="" name="s" id="s" placeholder="Szukaj produktu..." />
+                            <button type="submit" id="searchsubmit" />
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </header>
         <main class="shop flex">
             <nav class="shop__categories">
@@ -223,11 +247,23 @@ $categorySlug = $cate->slug;
     }
     else {
     ?>
-    <header class="homepage__products__header">
+    <header class="homepage__products__header flex">
         <h2 class="homepage__products__header__h flex" onclick="openMobileMenuOnMobile()">
             <?php echo $category; ?>
             <img class="d-mobile icon" src="<?php echo get_bloginfo('stylesheet_directory') . '/img/arrow-down.svg'; ?>" alt="rozwin" />
         </h2>
+        <div>
+            <form role="search" method="get" id="searchform" class="searchform" action="//bolingier.com/sklep">
+                <div class="box">
+                    <div class="container-1">
+                        <input type="text" value="" name="s" id="s" placeholder="Szukaj produktu..." />
+                        <button type="submit" id="searchsubmit" />
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </header>
     <main class="shop flex">
         <nav class="shop__categories">

@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab20b0b1-05f1-4466-a9d0-d507c29f1255" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/big-image.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/archive-product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/big-image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/big-image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/video-1.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/img/video-1.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/mobile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +43,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zimnerzeczy" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -78,6 +81,18 @@
       <workItem from="1641583467877" duration="7351000" />
       <workItem from="1641811669050" duration="2434000" />
       <workItem from="1642086112991" duration="3010000" />
+      <workItem from="1642248487031" duration="41000" />
+      <workItem from="1642251161568" duration="1569000" />
+      <workItem from="1642973582326" duration="12924000" />
+      <workItem from="1643284523089" duration="2179000" />
+      <workItem from="1643298648568" duration="1097000" />
+      <workItem from="1643414476263" duration="1518000" />
+      <workItem from="1643669940761" duration="791000" />
+      <workItem from="1643720260082" duration="4907000" />
+      <workItem from="1643747284170" duration="10000" />
+      <workItem from="1643828837788" duration="2390000" />
+      <workItem from="1643910564883" duration="1913000" />
+      <workItem from="1644282161457" duration="2630000" />
     </task>
     <servers />
   </component>

@@ -17,6 +17,19 @@ const videoEnd = (e) => {
     video.play();
 }
 
+var userAgent = navigator.userAgent.toLowerCase();
+if (userAgent .indexOf('safari')!=-1){
+    if(userAgent .indexOf('chrome')  > -1){
+        //browser is chrome
+    }else if((userAgent .indexOf('opera')  > -1)||(userAgent .indexOf('opr')  > -1)){
+        //browser is opera
+    }else{
+        document.querySelector(`.topNav`).style.height = '30px';
+        document.querySelector(`.topNav__logoWrapper`).style.top = '20px';
+        document.querySelector(`.home .topNav__logoWrapper`).style.top = '80px';
+    }
+}
+
 const video = document.getElementById('mp4Video');
 const source = document.getElementById('mp4Source');
 if(video) video.addEventListener('ended', videoEnd, false);
@@ -73,17 +86,22 @@ const english = () => {
     window.location = "https://bolingier.skylo-test1.pl/en";
 }
 
-const slider1 = new Siema({
-    selector: '.homepage__products__main--mobile1',
-    perPage: 1,
-    draggable: true
-});
+let slider1, slider2;
+if(document.querySelector('.homepage__products__main--mobile1')) {
+    slider1 = new Siema({
+        selector: '.homepage__products__main--mobile1',
+        perPage: 1,
+        draggable: true
+    });
+}
 
-const slider2 = new Siema({
-    selector: '.homepage__products__main--mobile2',
-    perPage: 1,
-    draggable: true
-});
+if(document.querySelector('.homepage__products__main--mobile2')) {
+    slider2 = new Siema({
+        selector: '.homepage__products__main--mobile2',
+        perPage: 1,
+        draggable: true
+    });
+}
 
 const prevSlider1 = () => {
     slider1.prev();
@@ -114,13 +132,30 @@ if(window.innerWidth < 768) {
     }
 }
 
-let muted = true;
+let muted = true, mutedMobile = true;
 
+const video1 = document.querySelector('.video>video');
 const toggleVideoSound = () => {
-    const video = document.querySelector('.video>video');
     const mutedEl = document.querySelector('.muted');
     const unmutedEL = document.querySelector('.unmuted');
-    video.muted ^= 1;
+    video1.muted ^= 1;
+
+    if(muted) {
+        mutedEl.style.display = 'none';
+        unmutedEL.style.display = 'block';
+    }
+    else {
+        mutedEl.style.display = 'block';
+        unmutedEL.style.display = 'none';
+    }
+    muted = !muted;
+}
+
+const videoMobile = document.querySelector('.video--mobile>video');
+const toggleVideoSoundMobile = () => {
+    const mutedEl = document.querySelector('.muted--mobile');
+    const unmutedEL = document.querySelector('.unmuted--mobile');
+    videoMobile.muted ^= 1;
 
     if(muted) {
         mutedEl.style.display = 'none';
@@ -134,3 +169,23 @@ const toggleVideoSound = () => {
 }
 
 AOS.init();
+
+let mobile = window.innerWidth < 768;
+window.addEventListener('resize', (e) => {
+    if(window.innerWidth < 768 && !mobile) {
+        mobile = true;
+        video1.pause();
+        videoMobile.play();
+    }
+    else if(window.innerWidth >= 768 && mobile) {
+        mobile = false;
+        videoMobile.pause();
+        video1.play();
+    }
+});
+
+const searchParam = new URLSearchParams(window.location.search).get('szukaj');
+if(searchParam === 'true') {
+    console.log(document.querySelector('#searchform>div>div'));
+    document.querySelector('#searchform>div>div>input').focus();
+}
